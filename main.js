@@ -1,5 +1,19 @@
 const submitButton = document.querySelector(".submit");
 submitButton.onclick = makeList;
+let lightSwitch = document.querySelector("#slider");
+
+lightSwitch.addEventListener("swapJS", function(event) {
+  if ((lightSwitch.checked)) {
+    // document.getElementsByClassName("").setAttribute("src", "./arrayAdd.js");
+    // document
+    //   .getElementById("bodMod")
+    //   .setAttribute("style", "background-color: purple;");
+    document.getElementsByClassName("prompt").innerText="checked";}})
+//   } else {
+//     document.getElementById("switch").setAttribute("src", "./main.js");
+//     lightSwitch = 1;
+//   }
+// });
 
 function makeList(event) {
   event.preventDefault();
@@ -11,16 +25,15 @@ function makeList(event) {
 }
 
 function addNewLI(text) {
-  let num = parseInt(text.value)+1;
+  let num = parseInt(text.value) + 1;
   for (let i = 1; i < num; i++) {
-  const ul = document.querySelector(".list");
-  const li = document.createElement("li");
-  
+    const ul = document.querySelector(".list");
+    const li = document.createElement("li");
+
     li.innerText = i + text.value;
     ul.appendChild(li);
   }
 }
-
 
 for (let i = 1; i < num; i++) {
   addNewLI(i);

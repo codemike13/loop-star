@@ -2,23 +2,30 @@
 <html lang="en">
   <head>
     <title>Loop Star</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="./style.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="./bootstrap-4.3.1-dist/css/bootstrap.css" type="text/css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="./bootstrap-4.3.1-dist/css/bootstrap.css"
+      type="text/css"
+    />
   </head>
-  <body>
+  <body id="bodMod" style="background-color: teal">
     <section class="form-group container form-container">
       <form>
-        <label class="prompt" for="user-input">How Many Things Should We Add to the List?</label>
-        <input type="text" class="user-input form-control" id="user-input">
+        <label class="prompt" for="user-input"
+          >How Many Things Should We Add to the List?</label
+        >
+        <input type="text" class="user-input form-control" id="user-input" />
+        <button type="submit" class="submit btn btn-primary">Go</button>
+
         <button type="submit" class="submit btn btn-primary">Go</button>
       </form>
     </section>
     <section class="container list-container">
-      <ul class="list">
-      </ul>
+      <ul class="list"></ul>
     </section>
-    <script src="./main.js"></script>
+    <script id="js" src="./main.js"></script>
   </body>
 </html>
