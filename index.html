@@ -10,22 +10,104 @@
       href="./bootstrap-4.3.1-dist/css/bootstrap.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
   </head>
   <body id="bodMod" style="background-color: teal">
     <section class="form-group container form-container">
       <form>
         <label class="prompt" for="user-input"
-          >How Many Things Should We Add to the List?</label
+          ><h1>How Many Things Should We Add to the List?</h1>
+          <h3>
+            Toggle The "Array Mode" button to store values in database.
+          </h3></label
         >
-        <input type="text" class="user-input form-control" id="user-input" />
-        <button type="submit" class="submit btn btn-primary">Go</button>
 
-        <button type="submit" class="submit btn btn-primary">Go</button>
+        <input type="text" class="user-input form-control" id="user-input" />
+        <div id="indexNum-div">
+          <h6>Enter String:</h6>
+          <input
+            type="text"
+            class="user-input form-control"
+            id="index-number"
+          />
+          <h6>Enter Index #:</h6>
+        </div>
+        <button
+          id="array-display"
+          type="button"
+          data-toggle="collapse"
+          data-target="#array-manual"
+          class="submit btn btn-primary"
+        >
+          Array Mode : Off
+        </button>
+        <button id="target" type="submit" class="submit btn btn-primary">
+          Target
+        </button>
+
+        <button id="go" type="submit" class="submit btn btn-primary">Go</button>
+        <button id="clear" type="submit" class="submit btn btn-primary">
+          CLEAR!
+        </button>
+        <button id="printArray" type="submit" class="submit btn btn-primary">
+          Print List
+        </button>
+
+        <div class="collapse" id="array-manual">
+          <div class="card card-body">
+            <ul>
+              <li>
+                Enter string to store in array ....
+              </li>
+              <li>Click "Go" to add string to array list.</li>
+              <li>
+                To search individual strings by index number, enter index # and
+                click "Target"
+              </li>
+            </ul>
+            <div class="card">
+              <div id="current-string" class="card-body">
+                View window for target index #.
+                <ul id="array-list"></ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </form>
     </section>
     <section class="container list-container">
       <ul class="list"></ul>
     </section>
-    <script id="js" src="./main.js"></script>
+    <script src="./main.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      let pressEnter = document.getElementById("user-input");
+      pressEnter.addEventListener("keypress", function(event) {
+        if (event.keyCode === 13) {
+          event.preventDefault();
+          document.getElementById("user-input").reset();
+          return false;
+        }
+      });
+    </script>
   </body>
 </html>

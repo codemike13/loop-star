@@ -1,4 +1,4 @@
-const submitButton = document.querySelector(".submit");
+const submitButton = document.querySelector("#go");
 submitButton.onclick = makeList;
 
 function makeList(event) {
